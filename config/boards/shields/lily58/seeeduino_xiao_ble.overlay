@@ -1,12 +1,16 @@
 /*
  * Override lily58_dongle_xiao.overlay for Prospector compatibility
- * Disable SSD1306 OLED (I2C) and use ST7789 LCD (SPI) via prospector_adapter
+ * Delete SSD1306 OLED node entirely to avoid conflict with Prospector ST7789 LCD
  */
 
-&xiao_i2c {
-    status = "disabled";
+/ {
+    chosen {
+        /delete-property/ zephyr,display;
+    };
 };
 
-&oled {
+/delete-node/ &oled;
+
+&xiao_i2c {
     status = "disabled";
 };
