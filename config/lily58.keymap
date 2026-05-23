@@ -9,11 +9,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-// Prospector LCD用にdongle xiao の OLED 設定を打ち消す
-&xiao_i2c {
-    status = "disabled";
-};
-
 / {
     keymap {
         compatible = "zmk,keymap";
