@@ -11,6 +11,6 @@ include:
     artifact-name: nice_lily58_right
 
   - board: seeeduino_xiao_ble
-    shield: lily58_dongle_xiao prospector_adapter
+    shield: lily58_dongle_min prospector_adapter
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Lily58_Dongle\"
     artifact-name: xiao_lily58_dongle_prospector
