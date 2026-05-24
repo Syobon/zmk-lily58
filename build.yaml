@@ -1,16 +1,22 @@
 ---
 include:
+  # 左ペリフェラル
   - board: nice_nano_v2
-    shield: lily58_left_peripheral
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Lily58_L\"
-    artifact-name: nice_lily58_left
+    shield: lily58_left
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: lily58_left_peripheral
 
+  # 右ペリフェラル
   - board: nice_nano_v2
     shield: lily58_right
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Lily58_R\"
-    artifact-name: nice_lily58_right
 
+  # Prospector dongle (central)
   - board: seeeduino_xiao_ble
-    shield: lily58_dongle_min prospector_adapter
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Lily58_Dongle\"
-    artifact-name: xiao_lily58_dongle_prospector
+    shield: lily58_dongle prospector_adapter
+    artifact-name: lily58_dongle_prospector
+
+  # 設定リセット用（ペアリング初期化に必要）
+  - board: nice_nano_v2
+    shield: settings_reset
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
